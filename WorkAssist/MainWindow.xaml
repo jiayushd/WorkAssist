@@ -1,0 +1,53 @@
+﻿<Window x:Class="WorkAssist.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkAssist"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel >
+        <TextBlock Text="任务摘要列表"/>
+        <ListView x:Name="abstracts" Height="150" SelectionChanged="Abstracts_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="我方案号" DisplayMemberBinding="{Binding Path=AttorneySeries}"></GridViewColumn>
+                    <GridViewColumn Header="客户名称" DisplayMemberBinding="{Binding Path=ClientID}" Width="80"></GridViewColumn>
+                    <GridViewColumn Header="案件名称" DisplayMemberBinding="{Binding Path=CaseDocumentName}" Width="120"></GridViewColumn>
+                    <GridViewColumn Header="剩余天数" DisplayMemberBinding="{Binding Path=DaysLeft}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Text="任务详细信息"/>
+        <ListView x:Name="detail" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="我方案号" DisplayMemberBinding="{Binding Path=AttorneySeries}"></GridViewColumn>
+                    <GridViewColumn Header="客户名称" DisplayMemberBinding="{Binding Path=ClientID}" Width="80"></GridViewColumn>
+                    <GridViewColumn Header="案件名称" DisplayMemberBinding="{Binding Path=CaseDocumentName}" Width="120"></GridViewColumn>
+                    <GridViewColumn Header="申请号" DisplayMemberBinding="{Binding Path=applicationID}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Button x:Name="btnCN" Content="国内" Width="60" Click="BtnCN_Click"/>
+        <Button x:Name="btnAllOA" Content="所有OA" Width="60" Click="BtnAllOA_Click"/>
+        <Button x:Name="btnDataSearch" Content="数据查询" Width="60" Click="BtnDataSearch_Click"/>
+        <Button x:Name="btnAttorneyIndex" Content="代理人指标" Width="80" Click="BtnAttorneyIndex_Click"/>
+
+        <GroupBox>
+            <StackPanel x:Name="spDetail">
+                <TextBlock Text="我方案号"/>
+                <TextBox Text="{Binding Path=AttorneySeries}" />
+                <TextBlock Text="客户名称"/>
+                <TextBox Text="{Binding Path=ClientID}" />
+                <TextBlock Text="案件名称"/>
+                <TextBox Text="{Binding Path=CasedocumentName}" />
+                <TextBlock Text="申请号"/>
+                <TextBox Text="{Binding Path=ApplicationID}" />
+                <TextBlock Text="申请日"/>
+                <TextBox Text="{Binding Path=ApplicationDate, StringFormat={}{0:yyyy-MM-dd}}" />
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</Window>

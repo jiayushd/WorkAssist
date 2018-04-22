@@ -1,0 +1,39 @@
+﻿<Window x:Class="WorkAssist.SubWindows.AttorneyIndex"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkAssist.SubWindows"
+        mc:Ignorable="d"
+        Title="AttorneyIndex" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel x:Name="spStatus">
+            <TextBlock Text="代理人"/>
+            <TextBlock Text="{Binding Path=Name}" />
+            <TextBlock Text="国内"/>
+            <TextBlock Text="{Binding Path=IntCN}" />
+            <TextBlock Text="涉外"/>
+            <TextBlock Text="{Binding Path=IntForeign}"/>
+            <TextBlock Text="可处理"/>
+            <TextBlock Text="{Binding Path=IntTodo}"/>
+            <TextBlock Text="初稿"/>
+            <TextBlock Text="{Binding Path=IntFirstVirsion}"/>
+            <TextBlock Text="OA总数"/>
+            <TextBlock x:Name="tblkAllOA" Text="{Binding Path=IntAllOA}" MouseDown="TblkAllOA_MouseDown"/>
+            <TextBlock Text="30天内OA"/>
+            <TextBlock Text="{Binding Path=IntOAin30}"/>
+            <Button x:Name="btnAttorney" Content="舒丁" Width="80" Click="BtnAttorney_Click"/>
+            <ListView x:Name="detail" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="我方案号" DisplayMemberBinding="{Binding Path=AttorneySeries}"></GridViewColumn>
+                        <GridViewColumn Header="客户名称" DisplayMemberBinding="{Binding Path=ClientID}" Width="80"></GridViewColumn>
+                        <GridViewColumn Header="案件名称" DisplayMemberBinding="{Binding Path=CasedocumentName}" Width="120"></GridViewColumn>
+                        <GridViewColumn Header="申请号" DisplayMemberBinding="{Binding Path=ApplicationID}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>

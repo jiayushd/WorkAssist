@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkAssist", "WorkAssist\WorkAssist.csproj", "{591CD37F-C4EF-4BF6-A3F8-39C5CEE04BDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{591CD37F-C4EF-4BF6-A3F8-39C5CEE04BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591CD37F-C4EF-4BF6-A3F8-39C5CEE04BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591CD37F-C4EF-4BF6-A3F8-39C5CEE04BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591CD37F-C4EF-4BF6-A3F8-39C5CEE04BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FD82BF7-675F-4810-A482-AA2950FBE8D1}
+	EndGlobalSection
+EndGlobal
