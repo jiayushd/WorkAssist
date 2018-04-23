@@ -30,9 +30,14 @@ namespace WorkAssist.SubWindows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            DAL.TaskInfo taskInfos = new DAL.TaskInfo();
-            ds = taskInfos.GetAll();
-            spStatus.DataContext = ats;
+            //DAL.TaskInfo taskInfos = new DAL.TaskInfo();
+            //ds = taskInfos.GetAll();
+            //spStatus.DataContext = ats;
+
+            DAL.DepartmentMember members = new DAL.DepartmentMember();
+            List<MemberTree> department = new List<MemberTree> (){ GetAllMembers(members.GetAll())};
+            memberTree.ItemsSource = department;
+            
         }
 
         private void BtnAttorney_Click(object sender, RoutedEventArgs e)
@@ -60,5 +65,41 @@ namespace WorkAssist.SubWindows
             }
             return taskDetails;
         }
+
+
+        /// <summary>
+        /// 获取部门所有成员，并以membertree的形式返回
+        /// </summary>
+        /// <param name="ds"></param>
+        /// <returns></returns>
+        private MemberTree GetAllMembers(DataSet ds)
+        {
+            MemberTree Department = new MemberTree();
+            Department.Name = "电学部";
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                if (dr["部门"].ToString()=="电子部")
+                {
+                //新建一个与datarow对应的子树
+                MemberTree Company = new MemberTree();
+                Company.Name = dr["分公司"].ToString();
+                Company.Children = new List<MemberTree>();
+                MemberTree Group = new MemberTree();
+                Group.Name = dr["组别"].ToString();
+                Group.Children = new List<MemberTree>();
+                MemberTree Member = new MemberTree();
+                Member.Name = dr["姓名"].ToString();
+
+                Group.Children.Add(Member);
+                Company.Children.Add(Group);
+
+                //将子树合并到部门树中去
+                Department.Add(Company);
+                }
+            }
+            return Department;                
+        }
+
     }
 }

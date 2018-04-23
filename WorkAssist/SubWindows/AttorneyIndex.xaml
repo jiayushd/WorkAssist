@@ -7,7 +7,18 @@
         mc:Ignorable="d"
         Title="AttorneyIndex" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <StackPanel x:Name="spStatus">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TreeView x:Name="memberTree"  >
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                    <TextBlock Text="{Binding Path= Name}"/>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <StackPanel x:Name="spStatus" Grid.Column="1">
             <TextBlock Text="代理人"/>
             <TextBlock Text="{Binding Path=Name}" />
             <TextBlock Text="国内"/>

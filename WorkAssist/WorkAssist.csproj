@@ -54,7 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DAL\DepartmentMember.cs" />
     <Compile Include="Model\CaseInfo.cs" />
+    <Compile Include="Model\DepartmentMember.cs" />
     <Compile Include="Model\TaskInfo.cs" />
     <Compile Include="SubWindows\AttorneyIndex.xaml.cs">
       <DependentUpon>AttorneyIndex.xaml</DependentUpon>
@@ -63,6 +65,7 @@
       <DependentUpon>DataSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AttorneyStatus.cs" />
+    <Compile Include="ViewModel\MemberTree.cs" />
     <Compile Include="ViewModel\TaskAbstract.cs" />
     <Compile Include="ViewModel\TaskDetails.cs" />
     <Page Include="MainWindow.xaml">
@@ -116,10 +119,5 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="数据集.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

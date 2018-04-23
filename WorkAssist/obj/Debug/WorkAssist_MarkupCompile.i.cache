@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\个人工作软件\WorkAssist\WorkAssist\obj\Debug\
+C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\
 WorkAssist
 none
 false
 DEBUG;TRACE
-D:\个人工作软件\WorkAssist\WorkAssist\App.xaml
+C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\App.xaml
 3911881682
-1764654728
-191203545047
+
+22-7768455
 131569487696
 MainWindow.xaml;SubWindows\AttorneyIndex.xaml;SubWindows\DataSearch.xaml;
 
-True
+False
 
