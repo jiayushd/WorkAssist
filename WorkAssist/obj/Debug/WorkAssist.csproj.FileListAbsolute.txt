@@ -38,3 +38,5 @@ C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\WorkAssist.cspro
 C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\WorkAssist.csproj.CoreCompileInputs.cache
 C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\WorkAssist.exe
 C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\WorkAssist.pdb
+C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\DepartmentMember.g.cs
+C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\DepartmentMember.baml

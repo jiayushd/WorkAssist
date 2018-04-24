@@ -64,7 +64,11 @@
     <Compile Include="SubWindows\DataSearch.xaml.cs">
       <DependentUpon>DataSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SubWindows\DepartmentMember.xaml.cs">
+      <DependentUpon>DepartmentMember.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AttorneyStatus.cs" />
+    <Compile Include="ViewModel\MemberInfoDetails.cs" />
     <Compile Include="ViewModel\MemberTree.cs" />
     <Compile Include="ViewModel\TaskAbstract.cs" />
     <Compile Include="ViewModel\TaskDetails.cs" />
@@ -88,6 +92,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SubWindows\DataSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindows\DepartmentMember.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

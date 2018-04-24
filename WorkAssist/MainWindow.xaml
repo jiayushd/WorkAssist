@@ -30,10 +30,15 @@
             </ListView.View>
 
         </ListView>
+        <WrapPanel>
+            
         <Button x:Name="btnCN" Content="国内" Width="60" Click="BtnCN_Click"/>
         <Button x:Name="btnAllOA" Content="所有OA" Width="60" Click="BtnAllOA_Click"/>
         <Button x:Name="btnDataSearch" Content="数据查询" Width="60" Click="BtnDataSearch_Click"/>
         <Button x:Name="btnAttorneyIndex" Content="代理人指标" Width="80" Click="BtnAttorneyIndex_Click"/>
+        <Button x:Name="btnDepartmentMember" Content="人员信息" Width="80" Click="BtnDepartmentMember_Click"/>
+
+        </WrapPanel>
 
         <GroupBox>
             <StackPanel x:Name="spDetail">

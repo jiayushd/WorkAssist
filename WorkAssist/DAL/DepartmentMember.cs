@@ -18,5 +18,11 @@ namespace WorkAssist.DAL
             DBAccess db = new DBAccess("C:\\WORK\\MyData\\数据集.accdb");
             return db.GetDataSetBySQL(strSQL);
         }
+
+        public bool ExcuteSQL(string strSQL)
+        {
+            DBAccess db = new DBAccess("C:\\WORK\\MyData\\数据集.accdb");
+            return db.ExcuteSQL(strSQL);
+        }
     }
 }

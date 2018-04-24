@@ -144,5 +144,11 @@ namespace WorkAssist
             AttorneyIndex attorneyidx = new AttorneyIndex();
             attorneyidx.Show();
         }
+
+        private void BtnDepartmentMember_Click(object sender, RoutedEventArgs e)
+        {
+            SubWindows. DepartmentMember dm = new SubWindows.DepartmentMember();
+            dm.Show();
+        }
     }
 }
