@@ -59,7 +59,7 @@ namespace WorkAssist.DAL
         }
 
         /// <summary>
-        /// 通过查询得到数据集
+        /// 通过查询得到dataset
         /// </summary>
         /// <param name="strSQL"></param>
         /// <returns></returns>
@@ -82,7 +82,7 @@ namespace WorkAssist.DAL
             {                
                 cnn.Close();//关闭连接
             }
-            //返回数据集
+            //返回dataset
             return ds;
         }
 

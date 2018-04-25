@@ -19,7 +19,7 @@ namespace WorkAssist.DAL
             //strSQL = strSQL + "AND (代理人处理状态 Not In('完成:完成', '完成:结案')) ";
             //strSQL = strSQL + "AND 完成日 IS NULL ORDER BY[定稿期限(内)]";
 
-            DBAccess db = new DBAccess("C:\\WORK\\MyData\\数据集.accdb");
+            DBAccess db = new DBAccess("C:\\WORK\\MyData\\dataset.accdb");
             return db.GetDataSetBySQL(strSQL);
         }
 
@@ -36,7 +36,7 @@ namespace WorkAssist.DAL
             strSQL = strSQL + "AND (代理人处理状态 Not In('完成:完成', '完成:结案')) ";
             strSQL = strSQL + "AND 完成日 IS NULL ORDER BY[定稿期限(内)]";
 
-            DBAccess db = new DBAccess("C:\\WORK\\MyData\\数据集.accdb");
+            DBAccess db = new DBAccess("C:\\WORK\\MyData\\dataset.accdb");
             return db.GetDataSetBySQL(strSQL);
         }
 
@@ -53,7 +53,7 @@ namespace WorkAssist.DAL
             strSQL = strSQL + "AND (代理人处理状态 Not In('完成:完成', '完成:结案')) ";
             strSQL = strSQL + "AND 完成日 IS NULL ORDER BY[官方期限]";
 
-            DBAccess db = new DBAccess("C:\\WORK\\MyData\\数据集.accdb");
+            DBAccess db = new DBAccess("C:\\WORK\\MyData\\dataset.accdb");
             return db.GetDataSetBySQL(strSQL);
         }
     }

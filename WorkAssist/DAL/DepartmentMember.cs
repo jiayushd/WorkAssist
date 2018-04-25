@@ -15,13 +15,13 @@ namespace WorkAssist.DAL
             //定义查询语句
             string strSQL = "SELECT * FROM 公司职员 ";
 
-            DBAccess db = new DBAccess("C:\\WORK\\MyData\\数据集.accdb");
+            DBAccess db = new DBAccess("C:\\WORK\\MyData\\dataset.accdb");
             return db.GetDataSetBySQL(strSQL);
         }
 
         public bool ExcuteSQL(string strSQL)
         {
-            DBAccess db = new DBAccess("C:\\WORK\\MyData\\数据集.accdb");
+            DBAccess db = new DBAccess("C:\\WORK\\MyData\\dataset.accdb");
             return db.ExcuteSQL(strSQL);
         }
     }
