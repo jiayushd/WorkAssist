@@ -9,6 +9,7 @@ namespace WorkAssist.ViewModel
     public class MemberTree
     {
         public string Name { get; set; }
+        public string Account { get; set; }
         public List<MemberTree> Children { get; set; }
 
         /// <summary>

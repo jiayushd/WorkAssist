@@ -40,7 +40,7 @@
             </Grid.RowDefinitions>
             <!--row1-->
             <TextBlock Text="姓名" />
-            <TextBox Text="{Binding Path=Name, Mode=TwoWay}" Grid.Column="1"/>
+            <TextBox Text="{Binding Path=Name, Mode=TwoWay}" Grid.Column="1" IsEnabled="False"/>
             <TextBlock Text="电话" Grid.Column="2"/>
             <TextBox Text="{Binding Path=PhoneNumber, Mode=TwoWay}" Grid.Column="3"/>
             <TextBlock Text="邮箱" Grid.Column="4"/>
@@ -60,11 +60,13 @@
             <TextBlock Text="入行时间" Grid.Row="2" Grid.Column="2"/>
             <DatePicker Text="{Binding Path=ProfessionStartDate, Mode=TwoWay}" Grid.Row="2" Grid.Column="3"/>
             <!--<TextBlock Text="是否在职" Grid.Column="4" Grid.Row="2"/>-->
-            <CheckBox IsChecked="{Binding Path=IsOnJob, Mode=TwoWay}" Content="是否在职"  Grid.Row="2" Grid.Column="4"/>
-
+            <CheckBox IsChecked="{Binding Path=IsOnJob, Mode=TwoWay}" Content="是否在职"  Grid.Row="3" Grid.Column="4"/>
+            <TextBlock Text="ID" Grid.Column="4" Grid.Row="2"/>
+            <TextBox Text="{Binding Path=Account, Mode=TwoWay}" Grid.Row="2" Grid.Column="5" IsEnabled="False"/>
             <TextBlock Text="职业经历" Grid.Row="3"/>
             <TextBox Text="{Binding Path=WorkingExperience, Mode=TwoWay}" Grid.Row="3" Grid.Column="1"/>
             <Button x:Name="btnSave" Content="保存" Grid.Row="4" Click="BtnSave_Click"/>
+            <Button x:Name="btnInsert" Content="新增" Grid.Row="4"  Grid.Column="2" Click="BtnInsert_Click"/>
         </Grid>        
         
     </Grid>

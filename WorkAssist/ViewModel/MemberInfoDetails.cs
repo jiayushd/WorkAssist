@@ -9,6 +9,7 @@ namespace WorkAssist.ViewModel
 {
     public class MemberInfoDetails
     {
+        public string Account { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
@@ -28,6 +29,7 @@ namespace WorkAssist.ViewModel
         {
             try
             {
+                Account = dr["系统账号"].ToString();
                 Name = dr["姓名"].ToString();
                 PhoneNumber = dr["电话"].ToString();
                 Email = dr["邮箱"].ToString();

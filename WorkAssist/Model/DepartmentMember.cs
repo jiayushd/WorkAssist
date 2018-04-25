@@ -9,6 +9,7 @@ namespace WorkAssist.Model
     public class DepartmentMember
     {
         int id;
+        string account;//系统账号
         string name;
         string phoneNumber;
         string email;
@@ -31,5 +32,6 @@ namespace WorkAssist.Model
         public DateTime? ProfessionStartDate { get => professionStartDate; set => professionStartDate = value; }
         public DateTime? CompanyEntryDate { get => companyEntryDate; set => companyEntryDate = value; }
         public string WorkingExperience { get => workingExperience; set => workingExperience = value; }
+        public string Account { get => account; set => account = value; }
     }
 }
