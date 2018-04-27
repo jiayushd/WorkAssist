@@ -40,7 +40,7 @@ namespace WorkAssist.ViewModel
             try
             {
                 TaskID = dr["案件任务ID"].ToString();
-                TaskName = dr["任务名称"].ToString();
+                TaskName = dr["任务名称"].ToString();//例如新申请、OA答复
                 TaskAttribute = dr["任务属性"].ToString();
                 TaskCatogry = dr["任务标识"].ToString();
                 Attorney = dr["承办人"].ToString();
@@ -131,7 +131,7 @@ namespace WorkAssist.ViewModel
                 TechdocumentName = dr["开案名称"].ToString();//开案名称
                 CasedocumentName = dr["案件名称"].ToString();//案件名称
                 ExtraInfo = dr["案件备注"].ToString();//备注信息
-                AppType = dr["申请类型"].ToString();//申请类型
+                AppType = dr["申请类型"].ToString();//申请类型，例如发明、实用新型
                 AppStatus = dr["内部状态"].ToString();//内部状态
 
                 if (dr["申请日"].ToString() == "")

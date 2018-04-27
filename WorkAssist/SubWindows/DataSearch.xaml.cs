@@ -34,6 +34,11 @@ namespace WorkAssist.SubWindows
         }
 
 
+        /// <summary>
+        /// 把dataset转换为taskdetails
+        /// </summary>
+        /// <param name="ds"></param>
+        /// <returns></returns>
         private List<TaskDetails> ConvertDStoDTLS(DataSet ds)
         {
             //新建摘要对象

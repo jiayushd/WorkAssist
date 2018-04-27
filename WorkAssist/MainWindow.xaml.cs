@@ -141,7 +141,7 @@ namespace WorkAssist
 
         private void BtnAttorneyIndex_Click(object sender, RoutedEventArgs e)
         {
-            AttorneyIndex attorneyidx = new AttorneyIndex();
+            SubWindows. AttorneyIndex attorneyidx = new SubWindows.AttorneyIndex();
             attorneyidx.Show();
         }
 

@@ -5,13 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkAssist.SubWindows"
         mc:Ignorable="d"
-        Title="AttorneyIndex" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="AttorneyIndex" Height="600" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="180"/>
             <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TreeView x:Name="memberTree"  >
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TreeView x:Name="memberTree"  Grid.RowSpan="2" SelectedItemChanged="MemberTree_SelectedItemChanged">
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}">
                     <TextBlock Text="{Binding Path= Name}"/>
@@ -34,17 +39,41 @@
             <TextBlock Text="30天内OA"/>
             <TextBlock Text="{Binding Path=IntOAin30}"/>
             <Button x:Name="btnAttorney" Content="舒丁" Width="80" Click="BtnAttorney_Click"/>
-            <ListView x:Name="detail" >
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="我方案号" DisplayMemberBinding="{Binding Path=AttorneySeries}"></GridViewColumn>
-                        <GridViewColumn Header="客户名称" DisplayMemberBinding="{Binding Path=ClientID}" Width="80"></GridViewColumn>
-                        <GridViewColumn Header="案件名称" DisplayMemberBinding="{Binding Path=CasedocumentName}" Width="120"></GridViewColumn>
-                        <GridViewColumn Header="申请号" DisplayMemberBinding="{Binding Path=ApplicationID}"></GridViewColumn>
-                    </GridView>
-                </ListView.View>
-
-            </ListView>
         </StackPanel>
+        <StackPanel x:Name="spIndex" Grid.Column="2" >
+            <TextBlock Text="经手所有案件"/>
+            <TextBlock Text="{Binding Path=NumofHandled}" />
+            <TextBlock Text="经手超期案件"/>
+            <TextBlock Text="{Binding Path=NumofExceedlimit}" />
+            <TextBlock Text="超期天数"/>
+            <TextBlock Text="{Binding Path=DaysofExceedlimit}"/>
+            <TextBlock Text="初稿总权值"/>
+            <TextBlock Text="{Binding Path=FirstVirsionWeight}"/>
+            <TextBlock Text="完成OA数量"/>
+            <TextBlock Text="{Binding Path=NumofDoneOA}"/>
+            <TextBlock Text="完成分"/>
+            <TextBlock x:Name="tb1" Text="{Binding Path=IntAllOA}" />
+            <TextBlock Text="起始日期"/>
+            <DatePicker x:Name="dpStart" Text="{Binding Path=StartDate}"/>
+            <TextBlock Text="终止日期"/>
+            <DatePicker x:Name="dpEnd" Text="{Binding Path=EndDate}"/>
+
+        </StackPanel>
+        <ListView x:Name="detail" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="经手数量" DisplayMemberBinding="{Binding Path=NumofHandled}"></GridViewColumn>
+                    <GridViewColumn Header="经手超期数量" DisplayMemberBinding="{Binding Path=NumofExceedlimit}" Width="80"></GridViewColumn>
+                    <GridViewColumn Header="超期天数" DisplayMemberBinding="{Binding Path=DaysofExceedlimit}" Width="120"></GridViewColumn>
+                    <GridViewColumn Header="初稿总权值" DisplayMemberBinding="{Binding Path=FirstVirsionWeight}"></GridViewColumn>
+                    <GridViewColumn Header="OA初稿数量" DisplayMemberBinding="{Binding Path=NumofDoneOA}"></GridViewColumn>
+                    <GridViewColumn Header="完成分" DisplayMemberBinding="{Binding Path=ApplicationID}"></GridViewColumn>
+                    <GridViewColumn Header="起始日期" DisplayMemberBinding="{Binding Path=StartDate, StringFormat={}{0:yyyy-MM-dd}}"></GridViewColumn>
+                    <GridViewColumn Header="终止日期" DisplayMemberBinding="{Binding Path=EndDate, StringFormat={}{0:yyyy-MM-dd}}"></GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
     </Grid>
 </Window>

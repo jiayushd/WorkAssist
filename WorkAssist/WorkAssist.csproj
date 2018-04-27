@@ -67,6 +67,7 @@
     <Compile Include="SubWindows\DepartmentMember.xaml.cs">
       <DependentUpon>DepartmentMember.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AttorneyIndex.cs" />
     <Compile Include="ViewModel\AttorneyStatus.cs" />
     <Compile Include="ViewModel\MemberInfoDetails.cs" />
     <Compile Include="ViewModel\MemberTree.cs" />

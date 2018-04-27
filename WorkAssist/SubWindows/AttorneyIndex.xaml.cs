@@ -30,8 +30,11 @@ namespace WorkAssist.SubWindows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //DAL.TaskInfo taskInfos = new DAL.TaskInfo();
-            //ds = taskInfos.GetAll();
+            dpStart.DisplayDate = DateTime.Now.Date.AddDays(-DateTime.Now.Date.Day + 1);
+            dpEnd.DisplayDate = DateTime.Now.Date;
+
+            DAL.TaskInfo taskInfos = new DAL.TaskInfo();
+            ds = taskInfos.GetAll();
             //spStatus.DataContext = ats;
 
             DAL.DepartmentMember members = new DAL.DepartmentMember();
@@ -101,5 +104,25 @@ namespace WorkAssist.SubWindows
             return Department;                
         }
 
+        private void MemberTree_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+
+            MemberTree mt = new MemberTree();
+            mt = (MemberTree)memberTree.SelectedItem;
+
+            if (mt.Children==null)
+            {
+                DataRow[] drs= ds.Tables[0].Select("承办人 LIKE '"+mt.Name+"'");
+                DataSet dstemp = new DataSet();
+                dstemp = ds.Clone();
+                foreach (DataRow dr in drs)
+                {
+                    dstemp.Tables[0].Rows.Add(dr.ItemArray);
+                }
+                ViewModel. AttorneyIndex ai = new ViewModel.AttorneyIndex(dstemp,dpStart.DisplayDate.Date,dpEnd.DisplayDate.Date);
+                spIndex.DataContext = ai;
+            }
+
+        }
     }
 }
