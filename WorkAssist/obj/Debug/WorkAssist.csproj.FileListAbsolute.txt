@@ -40,3 +40,5 @@ C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\WorkAssist.exe
 C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\WorkAssist.pdb
 C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\DepartmentMember.g.cs
 C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\DepartmentMember.baml
+C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\TaskList.g.cs
+C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\TaskList.baml

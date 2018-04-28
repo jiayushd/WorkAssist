@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkAssist.SubWindows"
         mc:Ignorable="d"
-        Title="AttorneyIndex" Height="600" Width="800" Loaded="Window_Loaded">
+        Title="AttorneyIndex" Height="800" Width="1000" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="180"/>
@@ -38,25 +38,28 @@
             <TextBlock x:Name="tblkAllOA" Text="{Binding Path=IntAllOA}" MouseDown="TblkAllOA_MouseDown"/>
             <TextBlock Text="30天内OA"/>
             <TextBlock Text="{Binding Path=IntOAin30}"/>
-            <Button x:Name="btnAttorney" Content="舒丁" Width="80" Click="BtnAttorney_Click"/>
         </StackPanel>
         <StackPanel x:Name="spIndex" Grid.Column="2" >
             <TextBlock Text="经手所有案件"/>
-            <TextBlock Text="{Binding Path=NumofHandled}" />
+            <TextBlock x:Name="tbNumofHandled" Text="{Binding Path=NumofHandled}" MouseDown="TbNumofHandled_MouseDown"/>
             <TextBlock Text="经手超期案件"/>
-            <TextBlock Text="{Binding Path=NumofExceedlimit}" />
+            <TextBlock x:Name="tbNumofExceedlimit" Text="{Binding Path=NumofExceedlimit}" MouseDown="TbNumofExceedlimit_MouseDown" />
             <TextBlock Text="超期天数"/>
             <TextBlock Text="{Binding Path=DaysofExceedlimit}"/>
+            <TextBlock Text="超期率"/>
+            <TextBlock Text="{Binding Path=PercentofExceed, StringFormat={}{0:P1}}"/>
             <TextBlock Text="初稿总权值"/>
             <TextBlock Text="{Binding Path=FirstVirsionWeight}"/>
             <TextBlock Text="完成OA数量"/>
             <TextBlock Text="{Binding Path=NumofDoneOA}"/>
             <TextBlock Text="完成分"/>
-            <TextBlock x:Name="tb1" Text="{Binding Path=IntAllOA}" />
+            <TextBlock x:Name="tb1" Text="" />
             <TextBlock Text="起始日期"/>
-            <DatePicker x:Name="dpStart" Text="{Binding Path=StartDate}"/>
+            <DatePicker x:Name="dpStart" />
             <TextBlock Text="终止日期"/>
-            <DatePicker x:Name="dpEnd" Text="{Binding Path=EndDate}"/>
+            <DatePicker x:Name="dpEnd" />
+            <TextBlock Text="开案量"/>
+            <TextBlock Text="{Binding Path=NumofEntrusted}"/>
 
         </StackPanel>
         <ListView x:Name="detail" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
@@ -75,5 +78,19 @@
             </ListView.View>
 
         </ListView>
+        <DataGrid x:Name="dgDetail" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="姓名" Width="80" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="经手数量" Width="80" Binding="{Binding NumofHandled}"/>
+                <DataGridTextColumn Header="经手超期数量" Width="80" Binding="{Binding NumofExceedlimit}"/>
+                <DataGridTextColumn Header="超期率" Width="80" Binding="{Binding PercentofExceed, StringFormat={}{0:0.0%}}" />
+                <DataGridTextColumn Header="超期天数" Width="80" Binding="{Binding DaysofExceedlimit}"/>
+                <DataGridTextColumn Header="初稿总权值" Width="80" Binding="{Binding FirstVirsionWeight}"/>
+                <DataGridTextColumn Header="OA初稿数量" Width="80" Binding="{Binding NumofDoneOA}"/>
+                <DataGridTextColumn Header="完成分" Width="80" Binding="{Binding NumofDoneOA}"/>
+                <DataGridTextColumn Header="开案量" Width="80" Binding="{Binding NumofEntrusted}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

@@ -67,6 +67,9 @@
     <Compile Include="SubWindows\DepartmentMember.xaml.cs">
       <DependentUpon>DepartmentMember.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SubWindows\TaskList.xaml.cs">
+      <DependentUpon>TaskList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AttorneyIndex.cs" />
     <Compile Include="ViewModel\AttorneyStatus.cs" />
     <Compile Include="ViewModel\MemberInfoDetails.cs" />
@@ -97,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SubWindows\DepartmentMember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindows\TaskList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
