@@ -45,6 +45,22 @@ namespace WorkAssist.ViewModel
         public int NumofEntrusted { get => numofEntrusted; set => numofEntrusted = value; }
         public List<TaskDetails> TdsEntrusted { get => tdsEntrusted; set => tdsEntrusted = value; }
 
+        public AttorneyIndex()
+        {
+            firstVirsionWeight = 0;
+            doneWeight = 0;
+            numofDoneOA = 0;
+            numofHandled = 0;
+            numofExceedlimit = 0;
+            daysofExceedlimit = 0;
+            numofEntrusted = 0;
+            tdsFirstVirsions = new List<TaskDetails>();
+            tdsDone = new List<TaskDetails>();
+            tdsDoneOA = new List<TaskDetails>();
+            tdsHandled = new List<TaskDetails>();
+            tdsExceedlimit = new List<TaskDetails>();
+            tdsEntrusted = new List<TaskDetails>();
+        }
         public AttorneyIndex(DataSet ds, DateTime? startdate, DateTime? enddate)
         {
 

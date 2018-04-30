@@ -156,14 +156,20 @@ namespace WorkAssist.ViewModel
                     case "实用新型新申请撰写":
                         Weight = 0.7;
                         break;
-                    case "发明OA答复一通":
+                    case "发明OA答复一通实质(S)":
                         Weight = 0.4;
                         break;
-                    case "实用新型OA答复一通":
-                    case "发明OA答复二通":
+                    case "实用新型OA答复一通实质(S)":
+                    case "发明OA答复二通实质(S)":
                         Weight = 0.2;
                         break;
-                    case "发明OA答复三通":
+                    case "发明OA答复三通实质(S)":
+                    case "实用新型OA答复一通形式-非本人失误(XN)":
+                    case "实用新型OA答复二通形式-非本人失误(XN)":
+                    case "实用新型OA答复三通形式-非本人失误(XN)":
+                    case "发明OA答复二通形式-非本人失误(XN)":
+                    case "发明OA答复一通形式-非本人失误(XN)":
+                    case "发明OA答复三通形式-非本人失误(XN)":
                         Weight = 0.1;
                         break;
                     default:

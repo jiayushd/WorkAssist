@@ -12,8 +12,8 @@
                 <GridView>
                     <GridViewColumn Header="我方案号" DisplayMemberBinding="{Binding Path=AttorneySeries}"></GridViewColumn>
                     <GridViewColumn Header="客户案号" DisplayMemberBinding="{Binding Path=ClientSeries}"></GridViewColumn>
-                    <GridViewColumn Header="客户名称" DisplayMemberBinding="{Binding Path=ClientID}" Width="80"></GridViewColumn>
-                    <GridViewColumn Header="案件名称" DisplayMemberBinding="{Binding Path=CaseDocumentName}" Width="120"></GridViewColumn>
+                    <GridViewColumn Header="客户名称" DisplayMemberBinding="{Binding Path=ClientID}" Width="140"></GridViewColumn>
+                    <GridViewColumn Header="案件名称" DisplayMemberBinding="{Binding Path=CasedocumentName}" Width="120"></GridViewColumn>
                     <GridViewColumn Header="申请类型" DisplayMemberBinding="{Binding Path=AppType}"></GridViewColumn>
                     <GridViewColumn Header="任务名称" DisplayMemberBinding="{Binding Path=TaskName}"></GridViewColumn>
                     <GridViewColumn Header="任务属性" DisplayMemberBinding="{Binding Path=TaskAttribute}"></GridViewColumn>
@@ -22,6 +22,7 @@
                     <GridViewColumn Header="初稿期限(外)" DisplayMemberBinding="{Binding Path=FirstVirsionDeadlineOutside,StringFormat={}{0:yyyy-MM-dd}}"></GridViewColumn>
                     <GridViewColumn Header="初稿日" DisplayMemberBinding="{Binding Path=FirstVirsionDate, StringFormat={}{0:yyyy-MM-dd}}"></GridViewColumn>
                     <GridViewColumn Header="完成日" DisplayMemberBinding="{Binding Path=DoneDate, StringFormat={}{0:yyyy-MM-dd}}"></GridViewColumn>
+                    <GridViewColumn Header="承办人" DisplayMemberBinding="{Binding Path=Attorney}"></GridViewColumn>
                     <GridViewColumn Header="状态" DisplayMemberBinding="{Binding Path=ProcessStage}"></GridViewColumn>
                     <GridViewColumn Header="权值" DisplayMemberBinding="{Binding Path=Weight}"></GridViewColumn>
 
