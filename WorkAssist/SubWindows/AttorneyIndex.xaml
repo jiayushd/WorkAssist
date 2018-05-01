@@ -13,7 +13,7 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="240"/>
+            <RowDefinition Height="270"/>
             <RowDefinition />
         </Grid.RowDefinitions>
         <TreeView x:Name="memberTree"  Grid.RowSpan="2" SelectedItemChanged="MemberTree_SelectedItemChanged">
@@ -24,19 +24,18 @@
             </TreeView.ItemTemplate>
         </TreeView>
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2">
-            <GroupBox Header="数据范围" FontSize="14">
+            <GroupBox FontSize="14">
+                <GroupBox.Header>
+                    <TextBlock Text="数据范围" Style="{StaticResource txtblkGroupBoxHeaderStyle}"/>
+                </GroupBox.Header>
                 <WrapPanel>
                     <TextBlock Text="人员范围:" Style="{StaticResource txtblkHeaderStyle}" />
                     <TextBlock x:Name="txtblkMemberScope" Text="{Binding ElementName=memberTree,Path=SelectedItem.Name}" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Text="起始日期：" Style="{StaticResource txtblkHeaderStyle}"/>
-                    <DatePicker x:Name="dpStart" />
-                    <TextBlock Text="终止日期：" Style="{StaticResource txtblkHeaderStyle}"/>
-                    <DatePicker x:Name="dpEnd" />                    
                 </WrapPanel>
             </GroupBox>
             <GroupBox FontSize="14">
                 <GroupBox.Header>
-                    <TextBlock Text="案件情况" />
+                    <TextBlock Text="案件情况" FontSize="18" FontWeight="UltraBold" Foreground="OrangeRed"/>
                 </GroupBox.Header>
                 <GroupBox.Content>
                     <WrapPanel x:Name="spStatus" Style="{StaticResource wpStyle }">
@@ -55,8 +54,17 @@
                     </WrapPanel>                    
                 </GroupBox.Content>
             </GroupBox>
-            <GroupBox Header="数据指标" FontSize="14">
-                <StackPanel x:Name="spIndex">                    
+            <GroupBox  FontSize="14">
+                <GroupBox.Header>
+                    <TextBlock Text="数据指标" Style="{StaticResource txtblkGroupBoxHeaderStyle}"/>
+                </GroupBox.Header>
+                <StackPanel x:Name="spIndex">
+                    <WrapPanel>
+                        <TextBlock Text="起始日期：" Style="{StaticResource txtblkHeaderStyle}"/>
+                        <DatePicker x:Name="dpStart" />
+                        <TextBlock Text="终止日期：" Style="{StaticResource txtblkHeaderStyle}"/>
+                        <DatePicker x:Name="dpEnd" />
+                    </WrapPanel>
                     <WrapPanel Style="{StaticResource wpStyle }">
                         <TextBlock Text="经手所有案件：" Style="{StaticResource txtblkHeaderStyle}"/>
                         <TextBlock x:Name="txtblkNumofHandled" Text="{Binding Path=NumofHandled}" Style="{StaticResource txtblkDataStyle}" MouseDown="TxtblkNumofHandled_MouseDown"/>
@@ -82,9 +90,9 @@
                         <TextBlock Text="审核总权值：" Style="{StaticResource txtblkHeaderStyle}"/>
                         <TextBlock x:Name="txtblkCheckWeight" Text="未统计" Style="{StaticResource txtblkDataStyle}" Width="43" MouseDown="TxtblkDoneWeight_MouseDown"/>
                         <TextBlock Text="审核新人权值：" Style="{StaticResource txtblkHeaderStyle}"/>
-                        <TextBlock x:Name="txtblkCheckNewWeight" Text="{Binding Path=DoneWeight}" Style="{StaticResource txtblkDataStyle}" Width="35" MouseDown="TxtblkDoneWeight_MouseDown"/>
+                        <TextBlock x:Name="txtblkCheckNewWeight" Text="未统计" Style="{StaticResource txtblkDataStyle}" Width="45" MouseDown="TxtblkDoneWeight_MouseDown"/>
                         <TextBlock Text="普通审核权值：" Style="{StaticResource txtblkHeaderStyle}"/>
-                        <TextBlock x:Name="txtblkNormalCheckWeight" Text="{Binding Path=DoneWeight}" Style="{StaticResource txtblkDataStyle}" Width="45" MouseDown="TxtblkDoneWeight_MouseDown"/>
+                        <TextBlock x:Name="txtblkNormalCheckWeight" Text="未统计" Style="{StaticResource txtblkDataStyle}" Width="45" MouseDown="TxtblkDoneWeight_MouseDown"/>
 
                     </WrapPanel>
                     <WrapPanel Style="{StaticResource wpStyle }">
