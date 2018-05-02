@@ -125,7 +125,7 @@ namespace WorkAssist.ViewModel
                     }
 
                     //超期新申请数量累加：未完成初稿，但初稿期限已过。
-                    if (td.FirstVirsionDate==null && td.ProcessStage!="不处理:不处理" && (td.FirstVirsionDeadlineOutside != null && td.FirstVirsionDeadlineOutside < DateTime.Now.Date || td.FirstVirsionDeadlineInternal < DateTime.Now.Date))
+                    if (td.FirstVirsionDate==null && td.ProcessStage!="不处理:不处理" && td.DoneDate==null && (td.FirstVirsionDeadlineOutside != null && td.FirstVirsionDeadlineOutside < DateTime.Now.Date || td.FirstVirsionDeadlineInternal < DateTime.Now.Date))
                     {
                         numofExceedlimit = numofExceedlimit + 1;
                         if (td.FirstVirsionDeadlineOutside != null)
