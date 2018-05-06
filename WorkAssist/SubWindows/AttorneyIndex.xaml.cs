@@ -203,16 +203,22 @@ namespace WorkAssist.SubWindows
                 indextotal.NumofDoneOA += index.NumofDoneOA;
                 indextotal.NumofHandled += index.NumofHandled;
                 indextotal.NumofExceedlimit += index.NumofExceedlimit;
+                indextotal.NumofExceedOutsidelimit += index.NumofExceedOutsidelimit;
                 indextotal.NumofEntrusted += index.NumofEntrusted;
                 indextotal.DaysofExceedlimit += index.DaysofExceedlimit;
+                indextotal.DaysofExceedOutsidelimit += index.DaysofExceedOutsidelimit;
                 indextotal.TdsFirstVirsions = indextotal.TdsFirstVirsions.Concat(index.TdsFirstVirsions).ToList();
                 indextotal.TdsDone = indextotal.TdsDone.Concat(index.TdsDone).ToList();
                 indextotal.TdsDoneOA = indextotal.TdsDoneOA.Concat(index.TdsDoneOA).ToList();
                 indextotal.TdsEntrusted = indextotal.TdsEntrusted.Concat(index.TdsEntrusted).ToList();
+                indextotal.TdsExceedOutsidelimit = indextotal.TdsExceedlimit.Concat(index.TdsExceedOutsidelimit).ToList();
                 indextotal.TdsExceedlimit = indextotal.TdsExceedlimit.Concat(index.TdsExceedlimit).ToList();
+
                 indextotal.TdsHandled = indextotal.TdsHandled.Concat(index.TdsHandled).ToList();
             }
             indextotal.PercentofExceed = (double)indextotal.NumofExceedlimit / indextotal.NumofHandled;
+            indextotal.PercentofExceedOutside = (double)indextotal.NumofExceedOutsidelimit / indextotal.NumofHandled;
+
             spIndex.DataContext = indextotal;
 
             //将汇总数据填入【案件情况区】

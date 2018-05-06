@@ -22,8 +22,12 @@ namespace WorkAssist.ViewModel
         List<TaskDetails> tdsHandled;//经手新申请详情列表
         int numofExceedlimit;//超期案件数量
         List<TaskDetails> tdsExceedlimit;//经手新申请详情列表
+        int numofExceedOutsidelimit;//超客户期限案件数量
+        List<TaskDetails> tdsExceedOutsidelimit;//超客户期限详情列表
         double percentofExceed;
+        double percentofExceedOutside;
         int daysofExceedlimit;//超期天数
+        int daysofExceedOutsidelimit;//超期天数
         int numofEntrusted;//委托案件量
         List<TaskDetails> tdsEntrusted;//经手新申请详情列表
 
@@ -44,6 +48,10 @@ namespace WorkAssist.ViewModel
         public List<TaskDetails> TdsExceedlimit { get => tdsExceedlimit; set => tdsExceedlimit = value; }
         public int NumofEntrusted { get => numofEntrusted; set => numofEntrusted = value; }
         public List<TaskDetails> TdsEntrusted { get => tdsEntrusted; set => tdsEntrusted = value; }
+        public int NumofExceedOutsidelimit { get => numofExceedOutsidelimit; set => numofExceedOutsidelimit = value; }
+        public List<TaskDetails> TdsExceedOutsidelimit { get => tdsExceedOutsidelimit; set => tdsExceedOutsidelimit = value; }
+        public int DaysofExceedOutsidelimit { get => daysofExceedOutsidelimit; set => daysofExceedOutsidelimit = value; }
+        public double PercentofExceedOutside { get => percentofExceedOutside; set => percentofExceedOutside = value; }
 
         public AttorneyIndex()
         {
@@ -71,14 +79,17 @@ namespace WorkAssist.ViewModel
             numofDoneOA = 0;
             numofHandled = 0;
             numofExceedlimit = 0;
+            numofExceedOutsidelimit = 0;
             daysofExceedlimit = 0;
+            daysofExceedOutsidelimit = 0;
             numofEntrusted = 0;
             tdsFirstVirsions = new List<TaskDetails>();
             tdsDone = new List<TaskDetails>();
             tdsDoneOA= new List<TaskDetails>();
             tdsHandled = new List<TaskDetails>();
             tdsExceedlimit = new List<TaskDetails>();
-            tdsEntrusted= new List<TaskDetails>();
+            tdsExceedOutsidelimit = new List<TaskDetails>();
+            tdsEntrusted = new List<TaskDetails>();
 
             //根据起始日期和结束日期计算区间段内的各种指标
 
@@ -138,6 +149,16 @@ namespace WorkAssist.ViewModel
                         }
                         tdsExceedlimit.Add(td);
                     }
+
+                    //超客户期限的新申请
+                    if (td.FirstVirsionDate == null && td.ProcessStage != "不处理:不处理" && td.DoneDate == null && td.FirstVirsionDeadlineOutside != null && td.FirstVirsionDeadlineOutside < DateTime.Now.Date )
+                    {
+                        numofExceedOutsidelimit = numofExceedOutsidelimit + 1;
+
+                        daysofExceedOutsidelimit += (DateTime.Now.Date - td.FirstVirsionDeadlineOutside).Value.Days;
+
+                        tdsExceedOutsidelimit.Add(td);
+                    }
                 }
 
                 //委托案件累加
@@ -150,6 +171,7 @@ namespace WorkAssist.ViewModel
             }
 
             PercentofExceed =(double) numofExceedlimit / numofHandled;
+            PercentofExceedOutside = (double)numofExceedOutsidelimit / numofHandled;
             //PercentofExceed = Math.Round(PercentofExceed,2);
 
         }
