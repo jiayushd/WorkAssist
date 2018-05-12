@@ -21,6 +21,21 @@ namespace WorkAssist.ViewModel
         public DateTime? CompanyEntryDate { get; set; }
         public string WorkingExperience { get; set; }
 
+        public MemberInfoDetails()
+        {
+            Account = "";
+            Name = "";
+            PhoneNumber = "";
+            Email = "";
+            SubCompany = "";
+            Department = "";
+            Group = "";
+            IsOnJob =true;
+            ProfessionStartDate = null;
+            CompanyEntryDate = null;
+            WorkingExperience = "";
+        }
+
         /// <summary>
         /// 将输入的datarow转换成人员信息详情
         /// </summary>

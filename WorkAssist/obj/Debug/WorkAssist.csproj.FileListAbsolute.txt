@@ -43,3 +43,5 @@ C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\Depar
 C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\TaskList.g.cs
 C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\TaskList.baml
 C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\App.baml
+C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\InsertMember.g.cs
+C:\Users\jiayu\Documents\GitHub\WorkAssist\WorkAssist\obj\Debug\SubWindows\InsertMember.baml

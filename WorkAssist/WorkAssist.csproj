@@ -67,6 +67,9 @@
     <Compile Include="SubWindows\DepartmentMember.xaml.cs">
       <DependentUpon>DepartmentMember.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SubWindows\InsertMember.xaml.cs">
+      <DependentUpon>InsertMember.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SubWindows\TaskList.xaml.cs">
       <DependentUpon>TaskList.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SubWindows\DepartmentMember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindows\InsertMember.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
