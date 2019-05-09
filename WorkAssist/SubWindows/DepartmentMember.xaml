@@ -26,7 +26,7 @@
             <Button x:Name="btnInsert" Content="新增" Click="BtnInsert_Click"/>
         </StackPanel>
         <!--人员信息-->
-        <Grid Grid.Column="1" x:Name="gridMemberInfo">        
+        <Grid Grid.Column="1" x:Name="gridMemberInfo" Background="#CCFFFFFF">        
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition />
